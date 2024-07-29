@@ -1,0 +1,78 @@
+#include<bits/stdc++.h>
+/*
+#include<ext/pb_ds/assoc_container.hpp>
+#include<ext/pb_ds/tree_policy.hpp>
+ *
+using namespace __gnu_pbds;
+using namespace std;
+ 
+typedef tree<int, null_type,greater_equal<int>, rb_tree_tag, tree_order_statistics_node_update> orderedSet;
+ */
+// less = set ordered from less    oredered_of_key(x) => no. of ele smaller than x
+// less_equal = multiset ordered from less
+//greater = set ordered from greater    oredered_of_key(x) => no. of ele bigger than x
+//greater_equal = multiset  ordered from greater
+#define ONE_PEICE_3MK ios_base::sync_with_stdio(0),cin.tie(0),cout.tie(0);
+#include <iostream>
+#include <map>
+#include <algorithm>
+#include <vector>
+#include <stack>
+#include <queue>
+#define el cout << endl
+#define ll long long
+#define ull unsigned long long
+#define yes cout << "YES"
+#define no cout << "NO"
+#define print cout <<
+using namespace std;
+void JUDGE_MOTHER_FATHER()
+{
+#ifndef ONLINE_JUDGE
+    freopen("Input.txt","r",stdin);
+    freopen("Output.txt","w",stdout);
+#endif
+ 
+}
+int freq[200001]={0};
+//vector<vector<int>>ar(100001,vector<int>(100001,0));
+long long ar[100001];
+long long pre[100001]={0};
+long long pre2[100001]={0};
+int main()
+{
+    JUDGE_MOTHER_FATHER();
+    ONE_PEICE_3MK
+    int t = 1;
+    cin >> t;
+    while (t--)
+    {
+        int n;
+        cin>>n;
+        for (int i=0;i<n;i++)
+        {
+            cin>>ar[i];
+        }
+        vector<long long>v(n);
+            bool x=1;
+        for (int i=0,j=n-1,c=0;c<n;c++)//3 4 5 2 9 1 1
+        {
+            if(x)
+            {
+               v[c]=ar[i];//3
+                i++;//-1
+                x=0;
+            }else
+            {
+                v[c]=ar[j];//
+                j--;
+                x=1;
+            }
+        }
+        for(auto it: v)
+        {
+            cout<<it<<' ';
+        }
+        el;
+    }
+}
