@@ -1,0 +1,27 @@
+#include<iostream>
+int freq[100000]={0};
+int ar[100000];
+int main()
+{
+    //JUDGE_MOTHER_FATHER();
+    //ONE_PEICE_3MK
+    int t = 1;
+    // cin >> t;
+    while (t--)
+    {
+        int n,m;
+        cin>>n>>m;
+        for (int i=1;i<=n;i++)
+        {
+            cin>>ar[i];
+            //cout<<ar[i]<<" ";
+            freq[ar[i]]++;
+        }
+        //el;
+        for (int i=1;i<=m;i++)
+        {
+          //  cout<<"aa"<<" ";
+            cout<<freq[i];el;
+        }
+    }
+}
