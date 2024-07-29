@@ -21,7 +21,7 @@ int main()
         for (int i=1;i<=m;i++)
         {
           //  cout<<"aa"<<" ";
-            cout<<freq[i];el;
+            cout<<freq[i]<<endl;
         }
     }
 }
